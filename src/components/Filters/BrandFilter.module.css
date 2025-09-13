@@ -1,0 +1,155 @@
+.brand {
+   display: flex;
+   align-items: flex-start;
+   flex-direction: column;
+   gap: 8px;
+
+   width: 204px;
+}
+.nameBrand {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.33333;
+    color: #8d929a;
+}
+.select {
+  position: relative;
+}
+.button {
+  position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+
+    border-radius: 12px;
+    border: none;
+    padding: 12px 16px;
+    width: 204px;
+    height: 44px;
+
+    background-color: #f7f7f7;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #101828;
+}
+.span {
+    position: absolute;
+    
+    right: 10px;
+    top: 50%;
+    
+    transition: transform 160ms ease;
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    color: #666;
+}
+.drop {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 20;
+
+  width: 204px;
+  height: 272px;
+  border: 1px solid #f7f7f7;
+  border-radius: 12px;
+  box-shadow: 0 4px 36px rgba(0, 0, 0, 0.02);
+  background: #fff;
+  overflow: hidden;
+}
+.list {
+  height: 100%;
+  overflow-y: auto;
+  padding: 14px 0 ;
+  padding-left: 18px;
+
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+.itemBtn {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  width: 100%;
+  text-align: left;
+  padding: 0 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #8d929a;
+}
+
+.itemBtn[aria-selected="true"] {
+  background: #f0f6ff;
+}
+
+.itemBtn:hover {
+  background: #f9fafb;
+}
+/* ---- PRICE overrides ---- */
+.dropPrice {
+  height: 188px;
+   }
+
+.listPrice {
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  box-sizing: border-box;
+  padding: 14px 0;
+  padding-left: 18px;
+}
+
+
+.itemBtnPrice {
+  height: 28px;
+} 
+
+/* ---- Mileage km ---- */
+ .mileageGroup {
+  display: flex;
+  
+  height: 44px;
+  border-radius: 12px;
+  background: #f7f7f7;
+  overflow: hidden;
+  
+}
+.from {
+  display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 160px;
+    padding: 0 14px 0 24px;
+    height: 100%;
+  
+}
+.from + .from {
+  border-left: 1px solid #dadde1;
+}
+.text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+  
+}
+.input {
+  padding-left: 8px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #101828;
+}

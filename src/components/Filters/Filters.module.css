@@ -1,0 +1,37 @@
+.filtersGroup {
+   width: 100%;
+   padding: 84px 138px 56px 138px;
+}
+
+.form {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end; 
+  flex-wrap: nowrap;      
+}
+
+
+
+
+
+
+.button {
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    padding: 12px 51px;
+    width: 156px;
+    height: 44px;
+    border: none;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #fff;
+
+    background-color: #3470ff;
+}
+.button:focus,
+.button:hover {
+    background-color: #0b44cd;
+}

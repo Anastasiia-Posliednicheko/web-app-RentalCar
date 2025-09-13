@@ -1,0 +1,29 @@
+.dateField {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+/* поповер поверх карточек */
+.dateField .react-datepicker-popper {
+    z-index: 60;
+    width: 100%;
+}
+
+/* календарь равной ширины с инпутом */
+.dateField .react-datepicker {
+    width: 100%;
+    min-width: 260px;
+}
+
+/* аккуратная «стрелочка», смещена чуть вправо от левого края */
+.dateField .react-datepicker__triangle {
+    left: 16px !important;
+}
+
+/* немного «мягкости», если нужно под макет */
+.dateField .react-datepicker {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+    border: 1px solid #e5e7eb;
+}

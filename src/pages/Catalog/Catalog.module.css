@@ -1,0 +1,43 @@
+.container {
+    margin: 0 auto;
+    padding: 0 120px;
+
+}
+.carList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 32px;
+    row-gap: 48px;
+    width: 1200px; 
+}
+
+.car {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 276px;
+    height: 424px;
+}
+.button {
+    display: block;
+    width: 156px;
+    height: 44px;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.25;
+    color: #101828;
+    border: 1px solid #3470ff;
+    border-radius: 12px;
+    padding: 12px;
+    background-color: transparent;
+    margin: 0 auto;
+    margin-top: 80px;
+
+}
+.button:hover,
+.button:focus {
+    border: 1px solid #0b44cd;
+}
