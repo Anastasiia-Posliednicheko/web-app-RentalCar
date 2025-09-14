@@ -12,6 +12,17 @@
     background-color: #f2f4f7;
 
 }
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 8px;
+}
+.logo svg {        /* чтобы не было лишних зазоров */
+  display: block;
+  height: 16px;    /* можно масштабировать через height */
+  width: auto;
+}
 .linkList{
     display: flex;
     align-items: center;

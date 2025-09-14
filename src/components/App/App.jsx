@@ -8,14 +8,19 @@ export default function App() {
   return (
     <div >
       <header>
-        <nav className={css.header}>
-          <p>Icon</p>
-          <div className={css.linkList}>
-            <Link to="/" className={css.link}>Home</Link>
-            <Link to="/catalog" className={css.link}>Catalog</Link>
-          </div>
-        </nav>
-      </header>
+         <nav className={css.header}>
+          <Link to="/" className={css.logo} aria-label="Go to home">
+            <svg  width="102" height="16">
+              <use href="/symbol-defs.svg#icon-RentalCar"></use>
+            </svg>
+          </Link>
+
+    <div className={css.linkList}>
+      <Link to="/" className={css.link}>Home</Link>
+      <Link to="/catalog" className={css.link}>Catalog</Link>
+    </div>
+  </nav>
+</header>
 
       <main className={css.container}>
         <Routes>

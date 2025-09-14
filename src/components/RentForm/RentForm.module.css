@@ -1,29 +1,217 @@
+.rent {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+    border: 1px solid #dadde1;
+    border-radius: 10px;
+    padding: 32px;
+    /*width: 576px; */
+    background-color: #fff;
+}
+.boxTitle {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    width: 576px;
+    
+    
+}
+.title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #101828;
+    margin: 0;
+}
+
+.subTitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #8d929a;
+    margin: 0;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    width: 576px;
+}
+.input {
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    border: none;
+    padding: 12px 20px;
+    width: 100%;
+    min-height: 48px;
+    outline: none;
+    box-sizing: border-box;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #8d929a;
+
+    background-color: #f7f7f7;
+}
+.inputComment {
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    border: none;
+    padding: 12px 20px;
+    width: 100%;
+    min-height: 88px;
+    outline: none;
+    box-sizing: border-box;
+    
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #8d929a;
+    
+    background-color: #f7f7f7;
+}
+.button {
+    display: block;
+    border-radius: 12px;
+    padding: 12px 51px;
+    width: 156px;
+    height: 44px;
+    border: none;
+    margin: 0 auto;
+    margin-top: 8px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #fff;
+
+    background-color: #3470ff;
+    transition: transform .12s ease, opacity .12s ease, box-shadow .12s ease;
+}
+.button:hover,
+.button:focus {
+    background: #0b44cd;
+}
+
+
+.required {
+    position: absolute;
+    opacity:0;
+    width:0;
+    height:0; 
+    pointer-events:none;    
+}
+
+
+
 .dateField {
     position: relative;
+    width: 100%;
+}
+
+.dateWrapper {
+    display: block;
+    width: auto;
+}
+
+.dateWrapper .react-datepicker__input-container {
     display: block;
     width: 100%;
 }
 
-/* поповер поверх карточек */
-.dateField .react-datepicker-popper {
+
+.popper {
     z-index: 60;
-    width: 100%;
+   
+   
 }
 
-/* календарь равной ширины с инпутом */
-.dateField .react-datepicker {
-    width: 100%;
-    min-width: 260px;
-}
-
-/* аккуратная «стрелочка», смещена чуть вправо от левого края */
-.dateField .react-datepicker__triangle {
+.popper .react-datepicker__triangle {
     left: 16px !important;
 }
 
-/* немного «мягкости», если нужно под макет */
-.dateField .react-datepicker {
+.calendar {
+    width: 252px;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
-    border: 1px solid #e5e7eb;
+    border: 1px solid #3470ff;
+    overflow: hidden;
+    background: #fff;
+    
+}
+
+.calendar :global(.react-datepicker__header) {
+    background: #fff !important;
+    border-bottom: 0 !important;
+    padding: 8px 10px 0 !important;
+}
+.calendar :global(.react-datepicker__current-month) {
+    font-weight: 600;
+    font-size: 16px;
+    color: #101828;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.calendar :global(.react-datepicker__day-names) {
+        padding: 12px !important;
+        border-bottom: 1px solid #3470ff;
+}
+
+.calendar :global(.react-datepicker__day-name) {
+    width: 32px !important;
+    line-height: 32px !important;
+    margin: 0 !important;
+    color: #8d929a !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    text-transform: uppercase;
+}
+.calendar :global(.react-datepicker__month-container) {
+    width: 100%;
+}
+
+
+
+.calendar .react-datepicker__day {
+    width: 32px;
+        height: 32px;
+        line-height: 32px;
+        margin: 0;
+        border-radius: 8px;
+        color: #101828;
+}
+
+.calendar .react-datepicker__day:hover {
+    background: #f3f7ff;
+}
+
+.calendar :global(.react-datepicker__day--selected),
+.calendar :global(.react-datepicker__day--keyboard-selected) {
+    background: #3470ff !important;
+    color: #fff !important;
+    border-radius: 50% !important;
+}
+
+.calendar .react-datepicker__day--disabled {
+    color: #c9ced6;
+    opacity: .6;
+}
+
+
+.calendar :global(.react-datepicker__navigation) {
+    top: 10px !important;
+}
+
+.calendar :global(.react-datepicker__navigation-icon::before) {
+    border-color: #3470ff !important;
+}
+.calendar :global(.react-datepicker__navigation:hover) {
+    background: #f0f6ff !important;
 }

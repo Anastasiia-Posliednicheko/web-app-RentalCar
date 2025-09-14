@@ -30,6 +30,7 @@
     color: #fff;
 
     background-color: #3470ff;
+    transition: transform .12s ease, opacity .12s ease, box-shadow .12s ease;
 }
 .button:focus,
 .button:hover {

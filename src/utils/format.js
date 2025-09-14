@@ -7,7 +7,7 @@ export const formatPrice = (v) => {
   return s.startsWith("$") ? s : `$${s}`; 
 };
 
-export const formatAddressShort=(address) => {
+export const formatAddressShort = (address) => {
   if (!address || typeof address !== "string") {
     return { country: "", city: "" };
   }
@@ -18,6 +18,12 @@ export const formatAddressShort=(address) => {
   const city = parts[parts.length - 2] || "";
 
   return { country, city };
-}
+};
+
+export const firstFourId=(id) => {
+  const onlyDigits = String(id ?? "").replace(/\D/g, "");
+  return onlyDigits.slice(0, 4) || String(id ?? "").slice(0, 4);
+};
+
 
 

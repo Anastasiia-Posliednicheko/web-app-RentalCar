@@ -36,8 +36,10 @@
     margin: 0 auto;
     margin-top: 80px;
 
+    transition: transform .12s ease, opacity .12s ease, box-shadow .12s ease;
+
 }
 .button:hover,
 .button:focus {
-    border: 1px solid #0b44cd;
+    background-color:  #0b44cd;
 }
