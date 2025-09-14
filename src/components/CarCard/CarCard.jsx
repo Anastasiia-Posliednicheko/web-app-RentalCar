@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addFavorite, removeFavorite } from "../../redux/favorites/slice.js";
-import { selectFavoritesSet } from "../../redux/favorites/selectors.js";
+import { selectFavoritesIds } from "../../redux/favorites/selectors.js";
 import { formatMileage, formatPrice, formatAddressShort } from "../../utils/format.js";
 import css from "./CarCard.module.css";
 
@@ -27,7 +27,7 @@ function HeartIcon({ active }) {
 
 export default function CarCard({ car }) {
   const dispatch = useDispatch();
-  const favorites = useSelector(selectFavoritesSet);
+  const favorites = useSelector(selectFavoritesIds);
   const isFav = favorites?.has?.(car.id) || favorites?.includes?.(car.id);
 
   const toggleFav = (e) => {

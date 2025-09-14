@@ -1,13 +1,12 @@
 .header {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-direction: row;
-    gap:960px;
 
     border-bottom: 1px solid #f2f4f7;
-    padding: 24px 120px;
-    width: 1440px;
+    padding: 0 120px;
+    width: 1200px;
     height: 68px;
     background-color: #f2f4f7;
 
@@ -18,9 +17,9 @@
   text-decoration: none;
   gap: 8px;
 }
-.logo svg {        /* чтобы не было лишних зазоров */
+.logo svg {        
   display: block;
-  height: 16px;    /* можно масштабировать через height */
+  height: 16px;    
   width: auto;
 }
 .linkList{

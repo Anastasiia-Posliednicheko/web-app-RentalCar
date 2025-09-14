@@ -71,7 +71,7 @@ export default function PriceFilter({ value, onChange, label = "Price / 1 hour" 
           aria-labelledby="priceLabel"
           aria-haspopup="listbox"
           aria-expanded={isOpen}
-          className={css.button}
+          className={css.buttonPrice}
         >
           {value ? `${value}` : "Choose a price"}
           <span

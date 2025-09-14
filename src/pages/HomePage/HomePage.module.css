@@ -3,8 +3,6 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 436px 329px 60px 329px;
-        gap: 40px;
         width: 1440px;
         height: 700px;
         background-image: linear-gradient(#0000, #0000),
@@ -50,9 +48,10 @@
 .hero {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     flex-direction: column;
     gap: 40px;
+
+    margin: 436px 328px 60px 328px;
 
    
 }

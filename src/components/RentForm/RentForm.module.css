@@ -23,7 +23,6 @@
     font-size: 20px;
     line-height: 1.2;
     color: #101828;
-    margin: 0;
 }
 
 .subTitle {
@@ -31,7 +30,6 @@
     font-size: 16px;
     line-height: 1.25;
     color: #8d929a;
-    margin: 0;
 }
 .form {
     display: flex;
@@ -214,4 +212,13 @@
 }
 .calendar :global(.react-datepicker__navigation:hover) {
     background: #f0f6ff !important;
+}
+
+
+.input:focus:invalid {
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, .15);
+}
+
+.input:valid {
+    outline: 1px solid #d0d5dd;
 }

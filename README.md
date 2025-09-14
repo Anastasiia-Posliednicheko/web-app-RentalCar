@@ -1,12 +1,44 @@
-# React + Vite
+RentalCar — car rental web app
+A small React SPA to browse a car catalog, filter by brand/price/mileage, add to Favorites, view car details, and submit a rental request.
+Features
+Catalog with pagination (“Load more”).
+Filters:
+Brand — custom dropdown with scroll + lazy loading of items.
+Price / 1 hour — custom dropdown from 30…200 (step 10). Initially shows 30–80, then scroll to load more.
+Mileage — paired inputs From / To with live thousands formatting while typing.
+Favorites: heart icon on card (overlay on the photo). State persists in localStorage.
+Car details page:
+Photo, title Brand Model, Year, short ID (first 4 chars),
+Address as City | Country,
+Price, mileage, description,
+Rental company, Rental conditions, Car specifications, Accessories & functionalities (with icons).
+Rent form:
+Fields: Name, Email, Booking date (English calendar popover near the input), Comment.
+Validation for required date; success/error toast messages.
+Toasts: success (booking), and common errors (e.g., “Car not found”).
+Base styling close to the design (no CSS frameworks).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Stack
+React 18 + Vite
+React Router (/catalog, /catalog/:id)
+Redux Toolkit (cars slice, favorites slice)
+Axios (HTTP)
+react-hot-toast (notifications)
+react-datepicker (custom-styled calendar)
+CSS Modules
 
-Currently, two official plugins are available:
+Usage
+Go to Catalog. Filters are on top.
+Choose a brand (dropdown with scrolling), price (click to open, 30–80 initially; scroll for 90–200), and optionally set mileage in From/To fields (typing keeps only digits and formats 1,234).
+Click Search to apply filters.
+Cliсk Load more to fetch the next page.
+Click the heart on a card to add/remove from Favorites (saved in localStorage).
+On the car details page, fill the Rent form and pick a date from the English calendar. On submit you’ll see a toast confirmation.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Author
 
-## Expanding the ESLint configuration
+Name: Anastasiia Posliednichenko
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Email: anastasiia.p.work@gmail.com
+
+Built for learning purposes. Feedback and PRs are welcome.

@@ -29,30 +29,31 @@ export default function Filters({ brands = [], initial, onApply }) {
   }
 
   return (
-    <div className={css.filtersGroup}>
-      <form
-        onSubmit={handleSubmit}
-        className= {css.form }
-      >
-        <BrandFilter
-          brands={brands}
-          value={brand}
-          onChange={setBrand}
-        />
-        <PriceFilter
-          value={rentalPrice}
-          onChange={setRentalPrice}
-          label="Price / 1 hour"
-        />
-        <MileageFilter
-          minValue={minMileage}
-          maxValue={maxMileage}
-          onChangeMin={setMinMileage}
-          onChangeMax={setMaxMileage}
-          label="Car mileage / km"
-        />
-        <button type="submit" className={css.button}>Search</button>
-      </form>
-    </div>
+    <div className={css.container}>
+        <form
+          onSubmit={handleSubmit}
+          className= {css.form }
+        >
+          <BrandFilter
+            brands={brands}
+            value={brand}
+            onChange={setBrand}
+          />
+          <PriceFilter
+            value={rentalPrice}
+            onChange={setRentalPrice}
+            label="Price / 1 hour"
+          />
+          <MileageFilter
+            minValue={minMileage}
+            maxValue={maxMileage}
+            onChangeMin={setMinMileage}
+            onChangeMax={setMaxMileage}
+            label="Car mileage / km"
+          />
+          <button type="submit" className={css.button}>Search</button>
+        </form>
+        
+      </div>
   );
 }

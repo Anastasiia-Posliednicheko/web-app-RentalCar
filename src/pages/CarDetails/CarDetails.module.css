@@ -47,7 +47,6 @@
     color: #3470ff;
 }
 .text {
-    margin: 0;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.25;
@@ -59,7 +58,6 @@
     font-size: 20px;
     line-height: 1.2;
     color: #101828;
-    margin: 0;
     margin-bottom: 20px;
 }
 .detailsItem {

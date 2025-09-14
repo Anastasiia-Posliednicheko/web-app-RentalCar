@@ -2,7 +2,10 @@ import { useState, useMemo } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { enUS } from "date-fns/locale";
+import toast from 'react-hot-toast';
 import css from "./RentForm.module.css"
+
+const NAME_JS_RE = /^\p{L}[\p{L}\p{M}\s'’-]{1,39}$/u;
 
 export default function RentForm({ car }) {
   const [name, setName] = useState("");
@@ -11,6 +14,7 @@ export default function RentForm({ car }) {
   const [dateObj, setDateObj] = useState(null);  
   const [comment, setComment] = useState("");
   const [isPickerOpen, setIsPickerOpen] = useState(false);
+  
 
   const todayObj = useMemo(() => {
     const d = new Date();
@@ -25,20 +29,37 @@ export default function RentForm({ car }) {
     const dd = String(d.getDate()).padStart(2, "0");
     return `${yyyy}-${mm}-${dd}`;
   }
+  function formatPrettyDate(d) {
+  if (!d) return "";
+  return d.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+}
 
-  function handleSubmit(e) {
+ function handleSubmit(e) {
     e.preventDefault();
-    if (!date) {
-      alert("Please choose a booking date.");
+    const form = e.currentTarget;
+    if (!form.checkValidity()) {
+      form.reportValidity(); 
       return;
     }
 
-    const carLabel = car ? `${car.brand} ${car.model}` : "";
-    alert(
-      `Успішно орендовано: ${carLabel}\nІм’я: ${name}\nEmail: ${email}\nДата: ${date}${
-        comment ? `\nКоментар: ${comment}` : ""
-      }`
-    );
+    const nameTrim = name.trim();
+    if (!NAME_JS_RE.test(nameTrim)) {
+      toast.error("Name: 2–40 letters, spaces, hyphen, apostrophe.");
+      return;
+    }
+
+    if (!date) {
+      toast.error("Please choose a booking date.");
+      return;
+    }
+
+    const carLabel = car ? `${car.brand} ${car.model}` : "car";
+    const prettyDate = formatPrettyDate(dateObj) || date;
+    toast.success(`Car booked successfully: ${carLabel} on ${prettyDate}`);
 
     setName("");
     setEmail("");
@@ -46,7 +67,6 @@ export default function RentForm({ car }) {
     setDateObj(null);
     setComment("");
   }
-
   return (
     <div className={css.rent}>
       <div className={css.boxTitle}>
@@ -56,11 +76,14 @@ export default function RentForm({ car }) {
       <form onSubmit={handleSubmit} className={css.form}>
         <label>
           <input
+            type="text"
             required
             placeholder="Name*"
             className={css.input}
             value={name}
             onChange={(e) => setName(e.target.value)}
+            inputMode="text"
+            pattern="^[A-Za-zÀ-ÖØ-öø-ÿĀ-žА-Яа-яЁёІіЇїЄєҐґ'’\- ]{2,40}$"
           />
         </label>
         <label >
@@ -71,6 +94,8 @@ export default function RentForm({ car }) {
             className={css.input}
             value={email}
             onChange={(e) => setEmail(e.target.value.trim())}
+            inputMode="email"
+            pattern="^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$"
           />
         </label>
         <label>
@@ -82,28 +107,19 @@ export default function RentForm({ car }) {
             setDate(d ? toISODateString(d) : "");
             setTimeout(() => setIsPickerOpen(false), 0);
                }}
-            onSelect={() => setTimeout(() => setIsPickerOpen(false), 0)}  
-            onInputClick={() => setIsPickerOpen(true)}                    
-            onCalendarOpen={() => setIsPickerOpen(true)}                 
+            open={isPickerOpen}
+            onCalendarOpen={() => setIsPickerOpen(true)}
             onCalendarClose={() => setIsPickerOpen(false)}
             onClickOutside={() => setIsPickerOpen(false)}
-            open={isPickerOpen}                                          
-            shouldCloseOnSelect                                           
+            shouldCloseOnSelect
             minDate={todayObj}
             placeholderText="Booking date"
             locale={enUS}
             dateFormat="MMM d, yyyy"
-            popperPlacement="bottom-start"
-            popperModifiers={[
-               { name: "offset", options: { offset: [4, 8] } },
-               { name: "preventOverflow", options: { boundary: "viewport", padding: 8 } },
-               { name: "flip", options: { fallbackPlacements: ["top"] } },
-               ]}
-            className={css.input}             
+            className={css.input}
             wrapperClassName={css.dateWrapper}
             calendarClassName={css.calendar}
             popperClassName={css.popper}
-            onKeyDown={(e) => { if (e.key === "Escape") setIsPickerOpen(false); }}
             />
            </div>
            <input

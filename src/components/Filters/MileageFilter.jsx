@@ -1,4 +1,3 @@
-import React from "react";
 import css from "./BrandFilter.module.css";
 
 const MILEAGE_MAX_DIGITS = 4;
