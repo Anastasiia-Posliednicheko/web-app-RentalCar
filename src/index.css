@@ -1,4 +1,4 @@
-body {
+html, body, #root {
   font-family: "Manrope", sans-serif;
 }
 button {

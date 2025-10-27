@@ -82,7 +82,7 @@ import toast from "react-hot-toast";
        </ul>
 
        {canLoadMore && (
-         <div>
+         <div className={css.loadMore}>
            <button
              onClick={handleLoadMore}
              disabled={loading}
